@@ -1,21 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sentiment API</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Comment Sentiment</title>
   <style>
     body {
-      width: 400px;  /* Set desired width */
-      height: 500px; /* Set desired height */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fafb;
       margin: 0;
-      padding: 0;
-      overflow: hidden;
+      padding: 1rem;
+      width: 360px;
+      color: #1f2937;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #111827;
+    }
+
+    .stats {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+
+    .stat {
+      margin: 0.3rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comment-list {
+      max-height: 300px;
+      overflow-y: auto;
+      padding-left: 1rem;
+      margin-top: 0.5rem;
+      border-left: 3px solid #e5e7eb;
+    }
+
+    .comment {
+      margin-bottom: 0.75rem;
+    }
+
+    .sentiment-label {
+      display: inline-block;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-right: 6px;
+    }
+
+    .positive {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+
+    .neutral {
+      background-color: #fef3c7;
+      color: #92400e;
+    }
+
+    .negative {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    .error {
+      color: #b91c1c;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>Test Sentiment</h1>
-  <button id="sendRequest">Send Random Text</button>
-  <div id="response"></div>
+  <h2>📊 YouTube Sentiment Summary</h2>
+  <div id="output" class="stats">
+    Loading...
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
