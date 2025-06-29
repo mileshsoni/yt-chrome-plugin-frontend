@@ -1,85 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Comment Sentiment</title>
+  <title>YouTube Comment Analyzer</title>
   <style>
+    /* Dark Theme */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      background-color: #1e1e1e;
+      color: #f1f1f1;
       margin: 0;
-      padding: 1rem;
-      width: 360px;
-      color: #1f2937;
+      box-sizing: border-box;
+      width: 320px; /* Set a width that fits the Chrome extension popup */
     }
-
-    h2 {
-      margin-top: 0;
-      color: #111827;
+    h1 {
+      font-size: 20px;
+      color: #ffffff;
     }
-
-    .stats {
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
+    .section {
+      margin-bottom: 15px;
     }
-
-    .stat {
-      margin: 0.3rem 0;
-      font-size: 0.95rem;
-    }
-
-    .comment-list {
-      max-height: 300px;
-      overflow-y: auto;
-      padding-left: 1rem;
-      margin-top: 0.5rem;
-      border-left: 3px solid #e5e7eb;
-    }
-
-    .comment {
-      margin-bottom: 0.75rem;
-    }
-
-    .sentiment-label {
-      display: inline-block;
-      font-weight: 600;
-      padding: 2px 6px;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      margin-right: 6px;
-    }
-
-    .positive {
-      background-color: #d1fae5;
-      color: #065f46;
-    }
-
-    .neutral {
-      background-color: #fef3c7;
-      color: #92400e;
-    }
-
-    .negative {
-      background-color: #fee2e2;
-      color: #991b1b;
-    }
-
-    .error {
-      color: #b91c1c;
+    .section-title {
       font-weight: bold;
+      color: #0099ff;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .comment-list {
+      list-style: none;
+      padding: 0;
+    }
+    .comment-item {
+      margin: 8px 0;
+      padding: 8px;
+      background-color: #444;
+      border-radius: 4px;
+    }
+    .comment-sentiment {
+      font-weight: bold;
+      color: #ffffff;
+    }
+    /* Image Styling */
+    img {
+      width: 100%;
+      margin-top: 20px;
+    }
+    /* Metrics Styling */
+    .metrics-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .metric {
+      width: 48%;
+      background-color: #444;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .metric-title {
+      font-size: 12px;
+      color: #cccccc;
+    }
+    .metric-value {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <h2>📊 YouTube Sentiment Summary</h2>
-  <div id="output" class="stats">
-    Loading...
-  </div>
-
+  <h1>YouTube Comment Analyzer</h1>
+  <div id="output" class="section"></div>
   <script src="popup.js"></script>
 </body>
 </html>
